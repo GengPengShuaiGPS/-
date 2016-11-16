@@ -1,6 +1,6 @@
 <?php 
 //设置每页显示记录数、总页数
-$pagesize = 4;
+$pagesize = 4;//此值可变
 $pages = ceil($records/$pagesize);
 //获取当前页码和计算开始行号
 if (isset($_GET['page'])) {
