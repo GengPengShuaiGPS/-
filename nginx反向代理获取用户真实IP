@@ -1,0 +1,13 @@
+server{
+	listen www.264.cn:80;
+	server_name www.264.com:80;
+	location / {
+		root html;//站点跟目录
+		index index.html index.htm index.php;//站点默认文件
+		proxy_name www.264.cn;
+	}
+  //加入下面三个指令	
+  proxy_set_headerHost $host;
+	proxy_set_header X-Real-IP $remote_addr;
+	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
